@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun With Javascript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Welcome..!</h1>
+        <h2><img src="account1.jpg" alt=""></h2>
+        <input type="text" placeholder="username" id="username">
+        <input type="text " placeholder="password" id="password">
+        <button id="btn" onmouseover="hover()">Log in</button>
+    </div>
+    <script>
+        var username = document.getElementById('username');
+        var password = document.getElementById('password');
+        var btn = document.getElementById('btn');
+
+        
+        function resetButton() {
+            btn.style.animation = ''; // Remove the animation
+            btn.style.backgroundColor = ''; // Remove the background color
+        }
+
+
+        function hover() {
+            if (username.value === "Harshalpatil74" && password.value === "Pass@123") {
+                console.log("log in");
+                btn.style.backgroundColor = "rgb(33, 195, 95)";
+            }
+
+            else {
+                btn.style.animation = "error 0.5s";
+                btn.style.backgroundColor = 'red';
+                btn.addEventListener('animationend', resetButton, { once: true });
+            };
+        };
+    </script>
+</body>
+
+</html>
